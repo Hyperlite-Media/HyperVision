@@ -160,12 +160,12 @@ class App(QWidget):
 
     # Generate file path for saving video
     def generate_video_path(self):
-        return f"/Users/bradanderson/desktop/ScreenShots/Video{self.video_counter}.mov"  # Set path for video to be
+        return f"/ScreenShots/Video{self.video_counter}.mov"  # Set path for video to be
         # saved
 
     # Generate file path for saving photo
     def generate_photo_path(self):
-        return f"/Users/bradanderson/desktop/ScreenShots/Photo{self.photo_counter}.jpg"  # Set path for photo to be
+        return f"/ScreenShots/Photo{self.photo_counter}.jpg"  # Set path for photo to be
         # saved
 
     # Apply red border to indicate recording
@@ -223,8 +223,6 @@ class App(QWidget):
 
         control_layout = QHBoxLayout()
         control_layout.addItem(QSpacerItem(80, 70, QSizePolicy.Expanding, QSizePolicy.Minimum))
-
-        #photo_icon = QIcon("/Users/bradanderson/PycharmProjects/HyperView/take-photo-icon.png")
 
         # Menu button to toggle control visibility
         self.menu_btn = QPushButton("Menu")
@@ -489,7 +487,7 @@ class App(QWidget):
             target_resolution = (3840, 2160)
             frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             resized_frame = cv2.resize(frame_rgb, target_resolution)
-            save_dir = "/Users/bradanderson/desktop/ScreenShots"  # Path where images will be saved
+            save_dir = "/ScreenShots"  # Path where images will be saved
             os.makedirs(save_dir, exist_ok=True)
             filename = f"Photo{self.photo_counter}.jpg"
             filepath = os.path.join(save_dir, filename)
